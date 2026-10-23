@@ -1,60 +1,144 @@
-# CodeIgniter 4 Framework
+# Compu Tech Store
 
-## What is CodeIgniter?
+Sistema web de gestión para una tienda de productos tecnológicos, desarrollado con PHP y CodeIgniter 4.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Descripción
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Compu Tech Store es una aplicación web orientada a la administración de una tienda de tecnología. El sistema permite gestionar productos, clientes, proveedores, categorías y ventas mediante una interfaz web organizada.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+La aplicación implementa autenticación de usuarios y control de acceso basado en roles, diferenciando las funciones disponibles para administradores y usuarios normales.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Funcionalidades
 
-## Important Change with index.php
+### Gestión de productos
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+- Registrar productos.
+- Consultar productos.
+- Editar información de productos.
+- Eliminar productos.
+- Administrar precios, stock, categorías, proveedores y estado.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+### Gestión comercial
 
-**Please** read the user guide for a better explanation of how CI4 works!
+- Registrar y administrar clientes.
+- Gestionar proveedores.
+- Gestionar categorías.
+- Registrar ventas.
+- Consultar el detalle de las ventas.
 
-## Repository Management
+### Usuarios y seguridad
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+- Inicio de sesión.
+- Registro de nuevos usuarios.
+- Cierre de sesión.
+- Autenticación mediante sesiones.
+- Acceso diferenciado por roles.
+- Protección de rutas administrativas y de usuario.
+- Almacenamiento de contraseñas mediante hash.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+### Interfaz
 
-## Contributing
+- Página principal de la tienda.
+- Catálogo de productos.
+- Formularios de registro y edición.
+- Modales para iniciar sesión y crear cuentas.
+- Carrusel de imágenes.
+- Diseño basado en Bootstrap.
 
-We welcome contributions from the community.
+## Tecnologías
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+- PHP
+- CodeIgniter 4
+- HTML5
+- CSS3
+- Bootstrap 5
+- MySQL
+- Composer
 
-## Server Requirements
+## Arquitectura
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+El proyecto utiliza el patrón MVC de CodeIgniter 4:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- `app/Controllers`: controladores y lógica de las solicitudes.
+- `app/Models`: modelos y acceso a los datos.
+- `app/Views`: interfaces y plantillas de la aplicación.
+- `app/Config`: configuración y rutas.
+- `public`: punto de entrada público de la aplicación.
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+## Módulos principales
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+- Productos
+- Clientes
+- Categorías
+- Proveedores
+- Ventas
+- Detalle de ventas
+- Usuarios
+- Roles
+- Departamentos
+- Municipios
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## Requisitos
+
+- PHP 8.1 o superior
+- Composer
+- MySQL
+- Servidor web compatible con PHP
+
+## Instalación
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/Jenncy/Proyecto-Final---PP.git
+   ```
+
+2. Entra al directorio del proyecto:
+
+   ```bash
+   cd Proyecto-Final---PP
+   ```
+
+3. Instala las dependencias:
+
+   ```bash
+   composer install
+   ```
+
+4. Crea una copia del archivo de variables de entorno:
+
+   ```bash
+   cp env .env
+   ```
+
+   En Windows puedes copiar manualmente `env` y renombrarlo como `.env`.
+
+5. Configura en `.env` la URL de la aplicación y los datos de conexión a MySQL.
+
+6. Configura el servidor web para utilizar la carpeta `public` como directorio público.
+
+7. Inicia la aplicación y accede desde el navegador.
+
+## Configuración de seguridad
+
+No publiques credenciales, contraseñas ni claves secretas dentro del archivo `.env`. Utiliza valores locales y conserva únicamente un archivo de ejemplo para documentar la configuración necesaria.
+
+## Estado del proyecto
+
+Proyecto académico funcional desarrollado como proyecto final de programación.
+
+## Mejoras futuras
+
+- Agregar validaciones más completas en los formularios.
+- Implementar búsqueda y filtrado de productos.
+- Añadir paginación.
+- Mejorar el control de inventario.
+- Incorporar reportes de ventas.
+- Agregar pruebas automatizadas.
+- Mejorar el diseño responsive.
+- Implementar confirmaciones antes de eliminar registros.
+- Usar transacciones para guardar ventas y sus detalles.
+
+## Autores
+
+Proyecto desarrollado por un equipo de estudiantes de programación.
